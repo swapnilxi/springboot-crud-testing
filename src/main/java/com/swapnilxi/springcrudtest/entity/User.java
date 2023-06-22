@@ -1,5 +1,4 @@
 package com.swapnilxi.springcrudtest.entity;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,13 +9,15 @@ import jakarta.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PRODUCT_TBL")
-public class Product {
 
+
+@Table(name = "user_tbl")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private int quantity;
-    private double price;
+    private String username;
+    private String email;
+    private String password;
 }
+

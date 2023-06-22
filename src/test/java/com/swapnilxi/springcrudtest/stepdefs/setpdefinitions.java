@@ -29,13 +29,13 @@ public class setpdefinitions {
     @Given("the user has opened the product creation page")
     public void openProductCreationPage() {
         // Additional setup for opening the product creation page goes here
-        initialProductCount = productRepository.findAll().size();
+        initialProductCount= productRepository.findAll().size();
     }
 
     @When("the user enters product details")
     public void enterProductDetails() {
-        product = new Product();
-        product.setName("Dummy Product");
+        product= new Product();
+        product.setName("dummy");
         product.setQuantity(10);
         product.setPrice(9.99);
     }
@@ -48,6 +48,7 @@ public class setpdefinitions {
     @Then("the product should be created successfully")
     public void verifyProductCreation() {
         assertNotNull(product.getId());
-        assertEquals(initialProductCount + 1, productRepository.findAll().size());
+        //assertequals(expectedValue, actual)
+        assertEquals(initialProductCount+1,productRepository.findAll().size());
     }
 }
